@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .logo img{
+    margin-left: 20px;
+    width: 100px;
+    filter: drop-shadow(2px 2px 2px white);
+}
+
+.container .links a{
+    color: white;
+    text-decoration: none;/*remove the underlines or others decorations*/
+    cursor: pointer;/* make the cursor a hand point above the links*/
+    position: relative;/* let modificate the position with top,bottom, left and right*/
+    margin: 0 20px;
+    transition: 0.3s linear;/*the duration of the change of a transition*/
+}
+
+.links a::before{/* ::before add to the element in the begining*/
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;/*in the part below of the link*/
+    width: 0;/*doesn't show because it has not width*/
+    background-color: #f74f10;/*we place a orange div*/
+    height: 3.5px;/*of height of 3.5px that doesn't have anything*/
+    transition: 0.3s linear;/*the duration of the change of a transition*/
+}
+
+.links a:hover::before,/*.links a:hover::before is for the lines below and .links a:hover is for the letters of the link*/
+.links a:hover{/*aplied to the one before the , and the one after too */
+    color: #f74f10;
+    width: 100%;
+}
+
+.container .search i{/*modify the icon of tsearch*/
+    color: white;
+    cursor: pointer;
+    font-size: 1.3rem;/*root-em*/
+    margin-right: 20px;
+}
+
+/*section starts*/
+
+section{
+    width: 100%;
+    height: 90hv;/*90hv because nav already have 10hv*/
+}
+
+section .content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;/*The spacing between each pair of adjacent items is the same.*/
+    align-items: center;
+}
