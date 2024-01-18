@@ -1,2 +1,3 @@
 # Shoes Store
-## https://oscararismendi.github.io/shoesStore/
+
+## <https://oscararismendi.github.io/shoesStore/>
