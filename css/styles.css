@@ -10,7 +10,7 @@
 body{
     width: 100%;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: black;
 }
 
@@ -79,4 +79,95 @@ section .content{
     height: 100%;
     justify-content: space-around;/*The spacing between each pair of adjacent items is the same.*/
     align-items: center;
+}
+
+.content .main-content{
+    color: white;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main-content h1{
+    font-size: clamp(2rem,1rem + 5vw,4rem);/*(min,value,max) min of 1 root em, valor de 1 root em + 5% del ancho del view port, con un maximo de 4 root em */
+
+}
+
+.main-content h2{
+    color: #f74f10;
+    font-size: clamp(2rem,1rem + 5vw,3.5rem);/*(min,value,max) min of 1 root em, valor de 1 root em + 5% del ancho del view port, con un maximo de 3.5 root em */
+    
+}
+
+.main-content p{
+    margin-top: 10px;
+    color: #635e5c;
+}
+
+.main-content .order{
+    display: flex;
+    margin: 20px 10px;
+    width: 100%;
+    justify-content: space-around;/*Distribute items evenly Start and end gaps are half the size of the space  between each item*/
+    min-height: 7vh;
+}
+
+.order h3{
+    font-size: 1.8rem;
+}
+
+.order button{
+    min-width: 50%;
+    margin-left: 10px;
+    border:none;
+    outline: none;
+    border-radius: 10px;
+    background:linear-gradient(to bottom right,#f74f10 40%, #8a3313);
+    color: white;
+    font-weight: 700;/*400 es normal, 700 es negrilla y el resto de valores cambian de manera linear*/
+    padding: 0 2px;
+    font-size: clamp(0.6rem,1rem + 1vw,3rem);
+    transition: 0.1s linear;
+}
+
+.order button:hover{
+    box-shadow: 0 0 30px #f74f10;
+    background:linear-gradient(to bottom right,#8a3313,#f74f10 40%);
+}
+
+.content .image img{
+    max-width: 450px;
+    width: 100%;
+    margin-right: 100px;
+    transform: rotate(40deg) translateX(900px);
+    filter: drop-shadow(-10px -10px 200px #f74f10);
+}
+
+@media (max-width:800px){
+    .content{
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .main-content{
+        margin: 0 10px;
+    }
+}
+
+@media(min-width:884px){
+    .content .image img{
+        min-width: 500px;
+    }
+}
+
+@media(max-width:440px){
+    .links{
+        display: none;
+    }
+
+    .image img{
+        width: 100px;
+        margin-right: none;
+    }
 }
